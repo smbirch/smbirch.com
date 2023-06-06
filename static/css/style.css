@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Monaco, Consolas, Lucida Console, monospace";
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: stretch;
+  text-decoration: none;
+}
+
+.container-lg {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 100vh;
+  text-decoration: none;
+}
+
+.base-background {
+  background-color: #f6f9fc;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  width: 286px;
+  font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+  font-size: 1.2em;
+  margin-top: 1em;
+  text-decoration: none;
+}
+
+.contact-link {
+  font-family: "Camphor,Open Sans,Segoe UI,sans-serif";
+  color: #5a5d7a;
+  text-decoration: none;
+  text-align: right;
+  position: relative;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  font-size: 1.2em;
+}
+
+.title {
+  color: #747fe0;
+  font-size: 4em;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  justify-content: center;
+}
+
+.about {
+  font-family: "Camphor,Open Sans,Segoe UI,sans-serif";
+  color: #525f7f;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-top: 1.5em;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.about-inner {
+  .about {
+    font-family: "Camphor,Open Sans,Segoe UI,sans-serif";
+    color: #525f7f;
+    display: inline;
+    flex-direction: column;
+    justify-content: left;
+    text-decoration: none;
+  }
+}
+
+.projects-header {
+  height: 28px;
+  background-color: #e4e3e5;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  margin-top: 1.5em;
+}
+
+.projects-box {
+  background-color: #5a5d7a;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.15),
+    0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.12);
+  font-family: Monaco, Consolas, Lucida Console, monospace;
+  padding: 0.5em 0.5em;
+}
+
+.projects-inner {
+  margin-bottom: 25px;
+  margin-left: 35px;
+  margin-right: 35px;
+  line-height: 24px;
+}
+
+.project-title {
+  color: #f7f7f7;
+  font-size: 1em;
+  margin-top: 0.5em;
+}
+
+.project-info {
+  color: #e7d184;
+  font-size: 1em;
+  margin-left: 1em;
+}
+
+.project-link {
+  color: #35feff;
+}
+
+.contact-title {
+  color: #525f7f;
+  font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  text-align: center;
+  padding-top: 50px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.contact-links {
+  font-family: Camphor, Open Sans, Segoe UI, sans-serif;
+  font-size: 1.2em;
+
+  margin-top: 150px;
+  padding-bottom: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles for mobile devices */
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+  .card {
+    width: 100%;
+  }
+  .form-group {
+    margin: 10px;
+    font-size: 0.7rem;
+  }
+  .form-control {
+    font-size: 0.7rem;
+  }
+  .title {
+    font-size: 2em;
+  }
+
+  .navbar {
+    font-size: 1em;
+  }
+
+  .navbar-container {
+    font-size: 1em;
+  }
+
+  .contact-link {
+    font-size: 1em;
+  }
+
+  .about {
+    font-size: 1em;
+    margin-top: 1em;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #747fe0;
+}
