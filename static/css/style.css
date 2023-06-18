@@ -115,6 +115,11 @@ body {
   color: #35feff;
 }
 
+.project-link:hover {
+  color: #e4e3e5;
+}
+
+
 .contact-title {
   color: #525f7f;
   font-family: Camphor, Open Sans, Segoe UI, sans-serif;
@@ -151,7 +156,7 @@ body {
   font-family: Camphor, Open Sans, Segoe UI, sans-serif;
   text-align: center;
   padding-bottom: 50px;
-  color: #525f7f;
+  color: #525f7f6b;
 }
 
 /* Styles for mobile devices */
@@ -211,6 +216,3 @@ a {
   transition: color 0.3s;
 }
 
-a:hover {
-  color: #E39774;
-}
