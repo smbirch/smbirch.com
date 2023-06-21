@@ -25,8 +25,7 @@ jobs:
         python-version: "3.11.4"
     - name: Install dependencies
       run: |
-        pip install pipenv && pipenv install
-        pipenv shell
+        pip install pipenv && pipenv install && pipenv shell
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
