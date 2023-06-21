@@ -40,7 +40,6 @@ jobs:
           command: |
             pip install pipenv
             pipenv install
-            pipenv shell
             
       - save_cache:
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
@@ -52,12 +51,12 @@ jobs:
       - run:
           name: Run flake8
           # This assumes flake8 is installed via the install-package step above
-          command: flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics -v
+          command: pipenv run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics -v
 
       - run:
           name: Run pytest
           # This assumes pytest is installed via the install-package step above
-          command: python -m pytest -v
+          command: pipenv run python -m pytest -v
 
 
 # Invoke jobs via workflows
