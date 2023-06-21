@@ -34,9 +34,15 @@ jobs:
           # app-dir: ~/project/package-directory/  # If your requirements.txt isn't in the root directory.
           pip-dependency-file: pipfile  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
       - run:
-          name: Run tests
+          name: Run flake8
+          # This assumes flake8 is installed via the install-package step above
+          command: pipenv shell && flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics -v
+
+      - run:
+          name: Run pytest
           # This assumes pytest is installed via the install-package step above
-          command: python -m pytest 
+          command: pipenv shell && python -m pytest -v
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
