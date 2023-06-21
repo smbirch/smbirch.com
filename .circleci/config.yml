@@ -22,6 +22,8 @@ jobs:
     # Change the version below to your required version of python
     docker:
       - image: cimg/python:3.11.4
+        environment:
+          PIPENV_VENV_IN_PROJECT: true
     # Checkout the code as the first step. This is a dedicated CircleCI step.
     # The python orb's install-packages step will install the dependencies from a Pipfile via Pipenv by default.
     # Here we're making sure we use just use the system-wide pip. By default it uses the project root's requirements.txt.
@@ -34,14 +36,28 @@ jobs:
           # app-dir: ~/project/package-directory/  # If your requirements.txt isn't in the root directory.
           pip-dependency-file: pipfile  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
       - run:
+          name: install dependencies
+          command: |
+            pip install pipenv
+            pipenv install
+            pipenv shell
+            
+      - save_cache:
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          paths:
+            - ".venv"
+            - "/usr/local/bin"
+            - "/usr/local/lib/python3.11.4/site-packages"
+
+      - run:
           name: Run flake8
           # This assumes flake8 is installed via the install-package step above
-          command: pipenv shell && flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics -v
+          command: flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics -v
 
       - run:
           name: Run pytest
           # This assumes pytest is installed via the install-package step above
-          command: pipenv shell && python -m pytest -v
+          command: python -m pytest -v
 
 
 # Invoke jobs via workflows
