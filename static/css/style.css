@@ -115,10 +115,13 @@ body {
   color: #35feff;
 }
 
+.h6 {
+  display: inline;
+}
+
 .project-link:hover {
   color: #e4e3e5;
 }
-
 
 .contact-title {
   color: #525f7f;
@@ -215,4 +218,3 @@ a {
   color: #747fe0;
   transition: color 0.3s;
 }
-
